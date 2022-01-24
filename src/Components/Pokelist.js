@@ -63,7 +63,7 @@ function Pokelist() {
             ))}
         </Row>
       </Container>
-      <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
+      {/* <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '} */}
     </div>
   );
 }

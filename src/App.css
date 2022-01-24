@@ -1,0 +1,16 @@
+main {
+  height: cacl(100vh - 56px);
+}
+
+.hero {
+  background: url("https://source.unsplash.com/1fZC2rYbpsU/") no-repeat fixed
+    center center/cover;
+  height: 100vh;
+  text-shadow: 2px 2px 16px black;
+  font-weight: bolder;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
