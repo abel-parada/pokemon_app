@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div className='hero d-flex justify-content-center align-items-center'>
             <h1 className="display-1">
-              Welcome to my Pokédex.
+              Welcome to my <span>Pokédex.</span>
             </h1>
         </div>
     );

@@ -6,11 +6,17 @@ main {
   background: url("https://source.unsplash.com/1fZC2rYbpsU/") no-repeat fixed
     center center/cover;
   height: 100vh;
-  text-shadow: 2px 2px 16px black;
+  margin-top: -140px;
+  text-shadow: 20px 0px 12px black;
   font-weight: bolder;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+span {
+  background-color: black;
+  color: white;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'; // This is for using Hooks!
 
 import Button from 'react-bootstrap/Button';
@@ -13,33 +14,46 @@ function Pokelist() {
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading]= useState(true);
 
+  const [nextPokemons, setNextPokemons] = useState('https://pokeapi.co/api/v2/pokemon')
+
+
 //   const [nextList, setNextList] = useState();
 
   // useEffect takes two parameters: a function and an array.
   
 // useEffect(()=>{},[]);
 
-  useEffect(()=>{
-    axios.get('https://pokeapi.co/api/v2/pokemon').then((response) =>{
-      // console.log(response);
-      // console.log(response.data);
+useEffect(()=>{
+  getPokemons();
+},[]);
+
+  const getPokemons = () =>{
+    axios.get(nextPokemons)
+    .catch(error => {
+      console.log(error);
+    })
+    .then((res) =>{
+      // console.log(res);
+      // console.log(res.data);
 
       // for the next button of 20 pokemons. API provides next and previous
-    //   setNextList(response.data.next);
+    //   setNextList(res.data.next);
       // console.log(nextList);
 
 
-      const fetches = response.data.results.map((p) =>
+      const fetches = res.data.results.map((p) =>
         axios.get(p.url).then((res) => res.data)
       );
 
+      setNextPokemons(res.data.next);
+
       Promise.all(fetches).then((data) =>{
-        setPokemons(data);
+        setPokemons((prevState) => [...prevState, ...data]);
         setIsLoading(false);
       });
       console.log(pokemons); // It will show 20 pokemons
     });
-  }, []);
+  };
   
   return (
     <div>
@@ -63,7 +77,9 @@ function Pokelist() {
             ))}
         </Row>
       </Container>
-      {/* <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '} */}
+      <Container className='align-items-center'>
+        <Button variant="dark" size="lg" onClick={getPokemons} className='align-items-center gap-2'>Next 20</Button>{' '}
+      </Container>
     </div>
   );
 }
