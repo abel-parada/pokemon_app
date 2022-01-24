@@ -11,6 +11,7 @@ Built with:
 - HTML
 - JS
 - Reactjs
+- PokeAPI: https://pokeapi.co/
 
 ## Setup and usage
 
