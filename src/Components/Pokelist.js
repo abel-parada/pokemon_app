@@ -9,7 +9,7 @@ import axios from 'axios';
 import Pokemoncard from './Pokemoncard';
 import Loader from './Loader';
 
-function Pokelist() {
+function Pokelist({favHandler, favourites}) {
 
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading]= useState(true);
@@ -74,6 +74,8 @@ useEffect(()=>{
                 name={pokemon.name}
                 image={pokemon.sprites.other.dream_world.front_default}
                 pokemonName={pokemon.name}
+                fav={favourites.some(item => item.name == pokemon.name)}
+                favClick={() => favHandler(pokemon)}
               />
             ))}
         </Row>

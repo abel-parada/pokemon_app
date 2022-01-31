@@ -1,10 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { FaGithubSquare } from "react-icons/fa";
 
 
 const About = () => {
     return (
         <div className="App">
+            <Container>
             <div className="article">
             <h1>About this APP</h1>
             <h2>WHO?</h2>
@@ -21,9 +23,10 @@ const About = () => {
             </p>
             <h2>OMG! TELL ME MORE!</h2>
             <p>
-                Check other projects and collaborations in my <a href="http://github.com/abel-parada"><FaGithubSquare/> Github Account</a> I will keep it UP! 💪
+                Check other projects and collaborations in my <a className='lean' href="http://github.com/abel-parada"><FaGithubSquare/> Github Account</a> I will keep it UP! 💪
             </p>
             </div>
+            </Container>
         </div>
     )
 };
