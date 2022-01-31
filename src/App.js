@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Layout from './Components/Layout';
 import Pokelist from './Components/Pokelist';
-import Home from './Components/Home';
+import Home from './Pages/Home';
 import './App.css'
+import PokeSingle from './Components/PokeSingle';
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="pokedex" element={<Pokelist />} />
+          <Route path="/:pokemonName" element={<PokeSingle />} />
         </Route>
       </Routes>
     </BrowserRouter>

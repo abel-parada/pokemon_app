@@ -73,13 +73,16 @@ useEffect(()=>{
                 key={pokemon.name}
                 name={pokemon.name}
                 image={pokemon.sprites.other.dream_world.front_default}
+                pokemonName={pokemon.name}
               />
             ))}
         </Row>
       </Container>
-      <Container className='align-items-center'>
-        <Button variant="dark" size="lg" onClick={getPokemons} className='align-items-center gap-2'>Next 20</Button>{' '}
-      </Container>
+      <div className="d-grid gap-2 justify-content-center">
+        <Button variant="secondary" size="lg" onClick={getPokemons}>
+          Next 20
+        </Button>
+      </div>
     </div>
   );
 }
